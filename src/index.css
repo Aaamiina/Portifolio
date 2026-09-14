@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-gold: #c9a45c;
+  --color-gold-soft: #e2c57a;
+  --color-gold-muted: #9a7d3c;
+  --color-ink: #0a0908;
+  --color-night: #080808;
+  --color-charcoal: #111111;
+  --color-elevated: #161616;
+  --color-paper: #f3efe6;
+  --color-mute: #9b968c;
+  --color-line: rgb(255 255 255 / 0.08);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --shadow-float: 0 20px 50px -28px rgb(0 0 0 / 0.7);
+  --shadow-glow: 0 10px 40px -18px rgb(201 164 92 / 0.45);
+}
+
+html {
+  color-scheme: dark;
+  font-size: 15px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100svh;
+  overflow-x: hidden;
+  background-color: var(--color-night);
+  color: var(--color-mute);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-paper);
+  caret-color: var(--color-paper);
+  box-shadow: 0 0 0 1000px #161616 inset;
+  transition: background-color 9999s ease-out;
+}
+
+::selection {
+  background: rgb(201 164 92 / 0.28);
+  color: #fff;
+}
+
+#root {
+  min-height: 100svh;
+  position: relative;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 120;
+  border-radius: 0.5rem;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.skip-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%);
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+.hero-panel-grid {
+  background-image:
+    linear-gradient(rgb(201 164 92 / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(201 164 92 / 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
