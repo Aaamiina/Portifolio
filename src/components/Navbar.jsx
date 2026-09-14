@@ -44,6 +44,14 @@ export default function Navbar() {
     return undefined
   }, [open])
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.matchMedia('(min-width: 1024px)').matches) setOpen(false)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
   const closeMenu = () => setOpen(false)
   const [firstName, ...lastNameParts] = profile.name.split(' ')
   const lastName = lastNameParts.join(' ')
@@ -54,11 +62,11 @@ export default function Navbar() {
       initial={{ y: -16, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6 sm:pt-4"
+      className="fixed inset-x-0 top-0 z-50 px-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-5 sm:pt-4"
     >
       <nav
         className={cn(
-          'mx-auto flex h-14 w-full max-w-7xl items-center justify-between rounded-full border px-3.5 transition-all duration-300 sm:h-[3.75rem] sm:px-5',
+          'mx-auto flex h-12 w-full max-w-7xl items-center justify-between rounded-full border px-3 transition-all duration-300 sm:h-14 sm:px-5',
           scrolled || open
             ? 'border-white/10 bg-night/75 shadow-[var(--shadow-float)] backdrop-blur-2xl'
             : 'border-white/8 bg-white/[0.03] backdrop-blur-xl',
@@ -68,18 +76,18 @@ export default function Navbar() {
         <a
           href="#home"
           onClick={closeMenu}
-          className={cn('group flex min-w-0 items-center gap-2.5 rounded-full', focusGold)}
+          className={cn('group flex min-w-0 items-center gap-2 rounded-full sm:gap-2.5', focusGold)}
         >
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/35 bg-gold/10 font-display text-[0.7rem] font-bold tracking-wide text-gold">
             AI
           </span>
-          <span className="truncate font-display text-[0.92rem] font-semibold tracking-tight text-paper transition-colors group-hover:text-gold">
+          <span className="truncate font-display text-[0.88rem] font-semibold tracking-tight text-paper transition-colors group-hover:text-gold sm:text-[0.92rem]">
             {firstName}
-            {lastName ? <span className="hidden min-[400px]:inline"> {lastName}</span> : null}
+            {lastName ? <span className="hidden min-[380px]:inline"> {lastName}</span> : null}
           </span>
         </a>
 
-        <ul className="hidden items-center gap-0.5 xl:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex">
           {primaryNavLinks.map((link) => {
             const isActive = active === link.id
             return (
@@ -88,7 +96,7 @@ export default function Navbar() {
                   href={`#${link.id}`}
                   aria-current={isActive ? 'page' : undefined}
                   className={cn(
-                    'relative rounded-full px-3 py-1.5 text-[0.8rem] tracking-wide transition-colors duration-200',
+                    'relative rounded-full px-2.5 py-1.5 text-[0.78rem] tracking-wide transition-colors duration-200 xl:px-3 xl:text-[0.8rem]',
                     focusGold,
                     isActive ? 'text-gold' : 'text-mute hover:text-paper',
                   )}
@@ -97,7 +105,7 @@ export default function Navbar() {
                   {isActive ? (
                     <motion.span
                       layoutId="nav-underline"
-                      className="absolute inset-x-3 -bottom-0.5 h-px bg-gold"
+                      className="absolute inset-x-2.5 -bottom-0.5 h-px bg-gold xl:inset-x-3"
                       transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                     />
                   ) : null}
@@ -107,7 +115,7 @@ export default function Navbar() {
           })}
         </ul>
 
-        <div className="hidden xl:block">
+        <div className="hidden lg:block">
           <Button href="#contact" variant="secondary" size="sm" arrow>
             Contact
           </Button>
@@ -116,7 +124,7 @@ export default function Navbar() {
         <button
           type="button"
           className={cn(
-            'inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-paper transition-colors hover:border-gold/40 hover:text-gold xl:hidden',
+            'inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-paper transition-colors hover:border-gold/40 hover:text-gold lg:hidden',
             focusGold,
           )}
           aria-expanded={open}
@@ -136,7 +144,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-3 top-[4.75rem] bottom-4 z-40 overflow-y-auto overscroll-contain rounded-[1.5rem] border border-white/10 bg-night/92 p-5 backdrop-blur-2xl sm:inset-x-5 xl:hidden"
+            className="fixed inset-x-3 top-[calc(3.75rem+env(safe-area-inset-top))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 overflow-y-auto overscroll-contain rounded-[1.5rem] border border-white/10 bg-night/95 p-4 backdrop-blur-2xl sm:inset-x-5 sm:p-5 lg:hidden"
           >
             <ul className="flex flex-col gap-1">
               {primaryNavLinks.map((link) => (

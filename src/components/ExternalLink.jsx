@@ -6,6 +6,7 @@ export default function ExternalLink({
   download,
 }) {
   const isPlaceholder = !href || href === '#'
+  const isMail = Boolean(href?.startsWith('mailto:'))
 
   return (
     <a
@@ -18,7 +19,7 @@ export default function ExternalLink({
       onClick={(event) => {
         if (isPlaceholder) event.preventDefault()
       }}
-      {...(!isPlaceholder && !download
+      {...(!isPlaceholder && !download && !isMail
         ? { target: '_blank', rel: 'noopener noreferrer' }
         : {})}
     >

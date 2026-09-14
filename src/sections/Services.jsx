@@ -15,7 +15,7 @@ export default function Services() {
           description="End-to-end product work across web, mobile, and data."
         />
 
-        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <ServiceCard
               key={service.id}

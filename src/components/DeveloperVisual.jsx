@@ -24,7 +24,7 @@ export default function DeveloperVisual() {
 
   return (
     <div
-      className="relative mx-auto w-full max-w-[16.5rem] sm:max-w-[18rem] lg:max-w-[20rem]"
+      className="relative mx-auto w-full max-w-[14.5rem] min-[380px]:max-w-[16rem] sm:max-w-[18rem] lg:max-w-[20rem]"
       onMouseMove={handleMove}
       onMouseLeave={reset}
     >

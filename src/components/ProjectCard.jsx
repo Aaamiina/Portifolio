@@ -71,11 +71,11 @@ export default function ProjectCard({ project, onDetails }) {
           </ul>
         ) : null}
 
-        <div className="mt-auto flex items-center gap-2 pt-4">
+        <div className="mt-auto flex flex-wrap items-center gap-2 pt-4">
           <Button as="button" type="button" variant="primary" size="sm" arrow onClick={() => onDetails(project)}>
             View Details
           </Button>
-          <div className="ml-auto flex items-center gap-1.5">
+          <div className="ms-auto flex items-center gap-1.5">
             <ExternalLink
               href={project.github}
               label={`${project.shortTitle} GitHub repository`}

@@ -20,12 +20,12 @@ export default function Education() {
         <motion.div variants={fadeUp} className="relative max-w-2xl pl-8 sm:pl-10">
           <span className="absolute top-2 bottom-2 left-[5px] w-px bg-gradient-to-b from-gold via-gold/30 to-transparent sm:left-[7px]" aria-hidden="true" />
           <span className="absolute top-6 left-0 h-3 w-3 rounded-full border border-gold bg-night sm:h-3.5 sm:w-3.5" aria-hidden="true" />
-          <article className="rounded-[var(--radius-lg)] border border-line bg-white/[0.02] px-6 py-7 sm:px-8">
+          <article className="rounded-[var(--radius-lg)] border border-line bg-white/[0.02] px-4 py-6 sm:px-8 sm:py-7">
             <p className={labelClass}>Degree</p>
-            <h3 className="mt-3 font-display text-[1.35rem] font-bold leading-snug tracking-[-0.03em] text-paper sm:text-2xl">
+            <h3 className="mt-3 font-display text-[1.2rem] font-bold leading-snug tracking-[-0.03em] text-paper sm:text-2xl">
               {education.degree}
             </h3>
-            <p className="mt-3 text-sm tracking-wide text-gold-soft">{education.institution}</p>
+            <p className="mt-3 text-sm leading-6 tracking-wide text-gold-soft">{education.institution}</p>
           </article>
         </motion.div>
       </motion.div>

@@ -56,19 +56,19 @@ export default function ProjectModal({ project, onClose }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.98 }}
             transition={{ duration: 0.26, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 flex max-h-[90svh] w-full max-w-4xl flex-col overflow-hidden rounded-[1.4rem] border border-white/10 bg-charcoal shadow-[var(--shadow-float)]"
+            className="relative z-10 flex max-h-[min(92svh,900px)] w-full max-w-4xl flex-col overflow-hidden rounded-[1.2rem] border border-white/10 bg-charcoal shadow-[var(--shadow-float)] sm:rounded-[1.4rem]"
           >
-            <div className="min-h-0 overflow-y-auto">
+            <div className="min-h-0 overflow-y-auto overscroll-contain">
               <ProjectVisual
                 type={project.visual}
                 title={project.shortTitle}
                 image={project.image}
-                className={project.image ? '' : 'aspect-[16/9]'}
+                className="aspect-[16/10]"
               />
 
-              <div className="p-5 sm:p-7">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 id="project-dialog-title" className="font-display text-xl font-bold leading-snug tracking-[-0.03em] text-paper sm:text-2xl">
+              <div className="p-4 sm:p-7">
+                <div className="flex items-start justify-between gap-3 sm:gap-4">
+                  <h3 id="project-dialog-title" className="font-display text-lg font-bold leading-snug tracking-[-0.03em] text-paper sm:text-2xl">
                     {project.title}
                   </h3>
                   <button

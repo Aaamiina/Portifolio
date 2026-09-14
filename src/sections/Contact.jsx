@@ -9,33 +9,40 @@ import { cardBase, labelClass } from '../lib/styles'
 export default function Contact() {
   return (
     <Section id="contact" className="relative border-t border-white/[0.04] bg-gradient-to-b from-white/[0.02] to-transparent">
-      <div className="pointer-events-none absolute -top-24 left-1/2 h-56 w-[32rem] -translate-x-1/2 rounded-full bg-gold/[0.05] blur-3xl" aria-hidden="true" />
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-40 w-[min(32rem,90vw)] -translate-x-1/2 rounded-full bg-gold/[0.05] blur-3xl sm:h-56" aria-hidden="true" />
       <motion.div initial="hidden" whileInView="visible" viewport={sectionViewport} variants={stagger}>
-        <motion.div variants={fadeUp} className="mb-10 max-w-3xl md:mb-12">
+        <motion.div variants={fadeUp} className="mb-8 max-w-3xl md:mb-12">
           <p className={`${labelClass} mb-3`}>Contact</p>
-          <h2 className="font-display text-[1.55rem] font-bold tracking-[-0.04em] text-paper sm:text-3xl md:text-[2.15rem] md:leading-[1.12]">
+          <h2 className="font-display text-[1.4rem] font-bold tracking-[-0.04em] text-balance text-paper sm:text-3xl md:text-[2.15rem] md:leading-[1.12]">
             Let's Build Something Meaningful.
           </h2>
-          <p className="mt-5 max-w-xl text-[0.95rem] leading-7 text-mute">
+          <p className="mt-4 max-w-xl text-[0.95rem] leading-7 text-mute sm:mt-5">
             Use the form to introduce yourself and describe what you need.
           </p>
           <span className="mt-6 block h-px w-12 bg-gradient-to-r from-gold/80 to-transparent" aria-hidden="true" />
         </motion.div>
 
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
+        <div className="grid items-start gap-8 sm:gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
           <motion.div variants={fadeUp}>
             <p className="max-w-md text-[0.95rem] leading-7 text-mute">
-              I am available for web, full-stack, mobile, and database projects. GitHub, LinkedIn, and email
-              links will appear here once those profiles are added.
+              I am available for web, full-stack, mobile, and database projects. Reach me by email or through
+              the profiles below.
             </p>
-            <dl className="mt-10 space-y-6 text-sm">
+            <dl className="mt-8 space-y-6 text-sm sm:mt-10">
               <div>
                 <dt className={labelClass}>Name</dt>
                 <dd className="mt-2 text-paper">{profile.name}</dd>
               </div>
               <div>
                 <dt className={labelClass}>Email</dt>
-                <dd className="mt-2 text-mute">Coming soon</dd>
+                <dd className="mt-2">
+                  <a
+                    href={profile.social.email}
+                    className="break-all text-paper transition-colors hover:text-gold"
+                  >
+                    aminaisaleh124@gmail.com
+                  </a>
+                </dd>
               </div>
               <div>
                 <dt className={labelClass}>Profiles</dt>

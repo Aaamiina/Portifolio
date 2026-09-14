@@ -29,7 +29,7 @@ export default function Skills() {
                 <span className="h-px w-6 bg-gold/60" aria-hidden="true" />
                 {group.title}
               </motion.h3>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {group.skills.map((skill) => (
                   <SkillCard
                     key={skill.name}

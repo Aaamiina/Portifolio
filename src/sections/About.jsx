@@ -31,13 +31,13 @@ export default function About() {
       <motion.div initial="hidden" whileInView="visible" viewport={sectionViewport} variants={stagger}>
         <SectionHeading eyebrow="About" title="About Me" />
 
-        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-20">
-          <motion.div variants={fadeUp} className="space-y-6">
-            <p className="max-w-xl font-display text-lg leading-8 tracking-[-0.02em] text-paper sm:text-[1.15rem] sm:leading-8">
+        <div className="grid items-start gap-8 md:gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 xl:gap-20">
+          <motion.div variants={fadeUp} className="space-y-5 sm:space-y-6">
+            <p className="max-w-xl font-display text-base leading-7 tracking-[-0.02em] text-paper sm:text-[1.15rem] sm:leading-8">
               {lead}
             </p>
             {rest.map((paragraph) => (
-              <p key={paragraph} className="max-w-xl text-[0.95rem] leading-7 text-mute">
+              <p key={paragraph} className="max-w-xl text-[0.92rem] leading-7 text-mute sm:text-[0.95rem]">
                 {paragraph}
               </p>
             ))}
@@ -48,7 +48,7 @@ export default function About() {
               <motion.li
                 key={item.title}
                 variants={fadeUp}
-                className={`${cardBase} group flex gap-4 px-5 py-5 hover:border-gold/30`}
+                className={`${cardBase} group flex gap-3 px-4 py-4 sm:gap-4 sm:px-5 sm:py-5 hover:border-gold/30`}
               >
                 <span className="font-display text-sm font-semibold text-gold/70" aria-hidden="true">
                   0{index + 1}

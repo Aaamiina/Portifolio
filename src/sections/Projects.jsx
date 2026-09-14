@@ -19,7 +19,7 @@ export default function Projects() {
         description="Selected applications spanning academic systems, student platforms, operations software, and mobile."
       />
 
-      <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} onDetails={setSelected} />
         ))}
