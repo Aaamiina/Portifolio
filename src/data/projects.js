@@ -1,3 +1,4 @@
+import buildingManagement from '../assets/building-management.jpg'
 import daryeelDental from '../assets/daryeel-dental.jpg'
 import scholarverify from '../assets/scholarverify.jpg'
 import skillswap from '../assets/skillswap.jpg'
@@ -165,6 +166,7 @@ export const projects = [
     github: 'https://github.com/Aaamiina/Building-Managment-System',
     liveDemo: '#',
     visual: 'building',
+    image: buildingManagement,
   },
   {
     id: 'sweets-pos',
