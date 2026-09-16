@@ -1,3 +1,9 @@
+import academicBridge1 from '../assets/academic-bridge/01-welcome.jpg'
+import academicBridge2 from '../assets/academic-bridge/02-signin.jpg'
+import academicBridge3 from '../assets/academic-bridge/03.jpg'
+import academicBridge4 from '../assets/academic-bridge/04.jpg'
+import academicBridge5 from '../assets/academic-bridge/05.jpg'
+import academicBridge6 from '../assets/academic-bridge/06.jpg'
 import buildingManagement from '../assets/building-management.jpg'
 import daryeelDental from '../assets/daryeel-dental.jpg'
 import scholarverify from '../assets/scholarverify.jpg'
@@ -24,6 +30,14 @@ export const projects = [
     github: 'https://github.com/Aaamiina/Bridging-students-and-academics-platform-using-flutter-app-',
     liveDemo: '#',
     visual: 'academic',
+    images: [
+      academicBridge1,
+      academicBridge2,
+      academicBridge3,
+      academicBridge4,
+      academicBridge5,
+      academicBridge6,
+    ],
   },
   {
     id: 'sky-nova',

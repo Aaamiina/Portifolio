@@ -4,6 +4,7 @@ import { FaExternalLinkAlt, FaGithub, FaTimes } from 'react-icons/fa'
 import { useFocusTrap } from '../hooks/useFocusTrap'
 import { cn, focusGold } from '../lib/styles'
 import ExternalLink from './ExternalLink'
+import ProjectGallery from './ProjectGallery'
 import ProjectVisual from './ProjectVisual'
 import TechBadge from './TechBadge'
 
@@ -59,12 +60,16 @@ export default function ProjectModal({ project, onClose }) {
             className="relative z-10 flex max-h-[min(92svh,900px)] w-full max-w-4xl flex-col overflow-hidden rounded-[1.2rem] border border-white/10 bg-charcoal shadow-[var(--shadow-float)] sm:rounded-[1.4rem]"
           >
             <div className="min-h-0 overflow-y-auto overscroll-contain">
-              <ProjectVisual
-                type={project.visual}
-                title={project.shortTitle}
-                image={project.image}
-                className="aspect-[16/10]"
-              />
+              {project.images?.length ? (
+                <ProjectGallery images={project.images} title={project.shortTitle} />
+              ) : (
+                <ProjectVisual
+                  type={project.visual}
+                  title={project.shortTitle}
+                  image={project.image}
+                  className="aspect-[16/10]"
+                />
+              )}
 
               <div className="p-4 sm:p-7">
                 <div className="flex items-start justify-between gap-3 sm:gap-4">

@@ -5,6 +5,7 @@ import { fadeUp, sectionViewport } from '../data/motion'
 import { cardBase, cn, focusGold } from '../lib/styles'
 import Button from './Button'
 import ExternalLink from './ExternalLink'
+import ProjectGallery from './ProjectGallery'
 import ProjectVisual from './ProjectVisual'
 import TechBadge from './TechBadge'
 
@@ -33,18 +34,24 @@ export default function ProjectCard({ project, onDetails }) {
       )}
     >
       <div className="relative border-b border-white/8">
-        <ProjectVisual
-          type={project.visual}
-          title={project.shortTitle}
-          image={project.image}
-          className="aspect-[16/10]"
-        />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-end p-3">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-night/70 px-2.5 py-1 text-[0.7rem] tracking-wide text-gold opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-            View details
-            <FiArrowUpRight className="h-3.5 w-3.5" />
-          </span>
-        </div>
+        {project.images?.length ? (
+          <ProjectGallery images={project.images} title={project.shortTitle} />
+        ) : (
+          <ProjectVisual
+            type={project.visual}
+            title={project.shortTitle}
+            image={project.image}
+            className="aspect-[16/10]"
+          />
+        )}
+        {!project.images?.length ? (
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-end p-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-night/70 px-2.5 py-1 text-[0.7rem] tracking-wide text-gold opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+              View details
+              <FiArrowUpRight className="h-3.5 w-3.5" />
+            </span>
+          </div>
+        ) : null}
       </div>
 
       <div className="flex flex-1 flex-col p-4 sm:p-5">
