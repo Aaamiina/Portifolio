@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { useState } from 'react'
-import portrait from '../assets/amina.png'
+import portrait from '../assets/amina.jpg'
 import { profile } from '../data/profile'
 
 export default function DeveloperVisual() {
@@ -50,7 +50,7 @@ export default function DeveloperVisual() {
             alt={`${profile.name}, ${profile.title}`}
             width={640}
             height={960}
-            className="aspect-[3/4] w-full object-cover object-[center_18%]"
+            className="aspect-[3/4] w-full object-cover object-[center_22%]"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/80 via-transparent to-black/10" />
           <figcaption className="absolute inset-x-0 bottom-0 p-5">
