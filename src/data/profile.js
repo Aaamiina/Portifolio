@@ -15,7 +15,7 @@ export const profile = {
     degree: "Bachelor's Degree in Computer Applications",
     institution: 'Jamhuria University of Science and Technology',
   },
-  cvPath: `${import.meta.env.BASE_URL}cv.pdf`,
+  cvPath: `${import.meta.env.BASE_URL}AminaCv.pdf`,
   social: {
     github: 'https://github.com/Aaamiina',
     linkedin: '#',
