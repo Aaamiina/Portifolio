@@ -70,6 +70,7 @@ export const projects = [
     liveDemo: '#',
     visual: 'clinic',
     image: daryeelDental,
+    hidden: true,
   },
   {
     id: 'wedding',

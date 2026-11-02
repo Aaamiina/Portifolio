@@ -20,9 +20,11 @@ export default function Projects() {
       />
 
       <div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2">
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} onDetails={setSelected} />
-        ))}
+        {projects
+          .filter((project) => !project.hidden)
+          .map((project) => (
+            <ProjectCard key={project.id} project={project} onDetails={setSelected} />
+          ))}
       </div>
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
