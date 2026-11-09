@@ -54,8 +54,8 @@ export const projects = [
   },
   {
     id: 'dental-clinic',
-    title: 'Daryel Dental Clinic Management System',
-    shortTitle: 'Daryel Dental',
+    title: 'Daryeel Dental Clinic Management System',
+    shortTitle: 'Daryeel Dental',
     description:
       'A modern dental clinic management platform for managing patients, companies, agreements and company-based discounts.',
     technologies: ['React', 'Node.js', 'MongoDB'],
@@ -70,7 +70,6 @@ export const projects = [
     liveDemo: '#',
     visual: 'clinic',
     image: daryeelDental,
-    hidden: true,
   },
   {
     id: 'wedding',
